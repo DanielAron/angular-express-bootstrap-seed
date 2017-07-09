@@ -3,12 +3,12 @@
 /* Controllers */
 
 function AppCtrl($scope, $http) {
-  $http({method: 'GET', url: '/api/name'}).
+  $http({method: 'GET', url: '/api/frauds'}).
   success(function(data, status, headers, config) {
-    $scope.name = data.name;
+    $scope.names = data;
   }).
   error(function(data, status, headers, config) {
-    $scope.name = 'Error!'
+    $scope.names = "ERROR :("
   });
 }
 
